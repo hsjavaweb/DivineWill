@@ -9,15 +9,15 @@ CREATE TABLE Student(
   sex VARCHAR(10)
 );
 - 增加数据
-INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
-INSERT INTO Student VALUES('2','rose','11','女');
-INSERT INTO Student VALUES('3','tom','22','男');
-INSERT INTO Student VALUES('4','jerry','100','男');
-INSERT INTO Student VALUES('5','yideng','11','男');
-INSERT INTO Student VALUES('6','gaohong','22','女');
-INSERT INTO Student VALUES('7','qunzhu','11','女');
-INSERT INTO Student VALUES('8','test','44','男');
-INSERT INTO Student(id,age) VALUES('9','33');
+   INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
+   INSERT INTO Student VALUES('2','rose','11','女');
+   * INSERT INTO Student VALUES('3','tom','22','男');
+   * INSERT INTO Student VALUES('4','jerry','100','男');
+   * INSERT INTO Student VALUES('5','yideng','11','男');
+   * INSERT INTO Student VALUES('6','gaohong','22','女');
+   * INSERT INTO Student VALUES('7','qunzhu','11','女');
+   * INSERT INTO Student VALUES('8','test','44','男');
+   * INSERT INTO Student(id,age) VALUES('9','33');
 
 
 ## 改数据
@@ -32,9 +32,9 @@ INSERT INTO Student(id,age) VALUES('9','33');
 
 ## 删除操作
 * 删除表中名为tom的记录
-	DELETE FROM Student WHERE NAME='tom';
+DELETE FROM Student WHERE NAME='tom';
 * 删除表中所以的数据
-		 DELETE FROM Student;
+ DELETE FROM Student;
 * 使用truncate删除表中记录
 TRUNCATE TABLE Student;
 * 删除clss列,一次只能删一列。
