@@ -1,8 +1,8 @@
-* 创建数据库
+- 创建数据库
 
 CREATE DATABASE yideng;
 USE yideng;
-* 创建表格
+- 创建表格
 
 CREATE TABLE Student(
   id INT PRIMARY KEY,
@@ -10,16 +10,16 @@ CREATE TABLE Student(
   age INT,
   sex VARCHAR(10)
 );
-* 增加数据
-1.INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
-2.INSERT INTO Student VALUES('2','rose','11','女');
-3.INSERT INTO Student VALUES('3','tom','22','男');
-4.INSERT INTO Student VALUES('4','jerry','100','男');
-5.INSERT INTO Student VALUES('5','yideng','11','男');
-6.INSERT INTO Student VALUES('6','gaohong','22','女');
-7.INSERT INTO Student VALUES('7','qunzhu','11','女');
-8.INSERT INTO Student VALUES('8','test','44','男');
-9.INSERT INTO Student(id,age) VALUES('9','33');
+- 增加数据
+INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
+INSERT INTO Student VALUES('2','rose','11','女');
+INSERT INTO Student VALUES('3','tom','22','男');
+INSERT INTO Student VALUES('4','jerry','100','男');
+INSERT INTO Student VALUES('5','yideng','11','男');
+INSERT INTO Student VALUES('6','gaohong','22','女');
+INSERT INTO Student VALUES('7','qunzhu','11','女');
+INSERT INTO Student VALUES('8','test','44','男');
+INSERT INTO Student(id,age) VALUES('9','33');
 
 
 ## 改数据
