@@ -1,14 +1,14 @@
-* 创建数据库
+* 创建数据库 *
 CREATE DATABASE yideng;
 USE yideng;
-* 创建表格
+* 创建表格 *
 CREATE TABLE Student(
   id INT PRIMARY KEY,
   NAME VARCHAR(20),
   age INT,
   sex VARCHAR(10)
 );
-* 增加数据
+* 增加数据 *
 INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
 INSERT INTO Student VALUES('2','rose','11','女');
 INSERT INTO Student VALUES('3','tom','22','男');
@@ -20,7 +20,7 @@ INSERT INTO Student VALUES('8','test','44','男');
 INSERT INTO Student(id,age) VALUES('9','33');
 
 
-### 改数据
+## 改数据
 * 将名字为jerry的同学年龄改为25
 UPDATE Student SET age='25' WHERE NAME='jerry';
 * 将年龄为22岁的性别为女的同学名字改为nice
