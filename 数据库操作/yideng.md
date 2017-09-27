@@ -21,20 +21,20 @@ INSERT INTO Student(id,age) VALUES('9','33');
 
 
 ## 改数据
-将名字为jerry的同学年龄改为25
-UPDATE Student SET age='25' WHERE NAME='jerry';
-将年龄为22岁的性别为女的同学名字改为nice
-UPDATE Student SET NAME='nice' WHERE age='22' AND sex='女';
-将学号为7的同学性别改为女
-UPDATE Student SET sex='男' WHERE id='7';
-在上面员工表的基本上增加一个class列
-ALTER TABLE Student ADD class VARCHAR(20);
+* 将名字为jerry的同学年龄改为25
+* UPDATE Student SET age='25' WHERE NAME='jerry';
+* 将年龄为22岁的性别为女的同学名字改为nice
+* UPDATE Student SET NAME='nice' WHERE age='22' AND sex='女';
+* 将学号为7的同学性别改为女
+* UPDATE Student SET sex='男' WHERE id='7';
+* 在上面员工表的基本上增加一个class列
+* ALTER TABLE Student ADD class VARCHAR(20);
 
 ## 删除操作
 * 删除表中名为tom的记录
-DELETE FROM Student WHERE NAME='tom';
+	DELETE FROM Student WHERE NAME='tom';
 * 删除表中所以的数据
-DELETE FROM Student;
+		 DELETE FROM Student;
 * 使用truncate删除表中记录
 TRUNCATE TABLE Student;
 * 删除clss列,一次只能删一列。
