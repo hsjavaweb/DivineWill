@@ -1,14 +1,18 @@
-* 创建数据库 *
+* 创建数据库
+
 CREATE DATABASE yideng;
 USE yideng;
-* 创建表格 *
+* 创建表格
+
 CREATE TABLE Student(
   id INT PRIMARY KEY,
   NAME VARCHAR(20),
   age INT,
   sex VARCHAR(10)
 );
-* 增加数据 *
+* 增加数据
+
+
 INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
 INSERT INTO Student VALUES('2','rose','11','女');
 INSERT INTO Student VALUES('3','tom','22','男');
