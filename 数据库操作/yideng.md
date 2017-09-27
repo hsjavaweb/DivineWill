@@ -11,11 +11,9 @@ CREATE TABLE Student(
   sex VARCHAR(10)
 );
 * 增加数据
-
-
-INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
-INSERT INTO Student VALUES('2','rose','11','女');
-INSERT INTO Student VALUES('3','tom','22','男');
+>INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
+>INSERT INTO Student VALUES('2','rose','11','女');
+>INSERT INTO Student VALUES('3','tom','22','男');
 INSERT INTO Student VALUES('4','jerry','100','男');
 INSERT INTO Student VALUES('5','yideng','11','男');
 INSERT INTO Student VALUES('6','gaohong','22','女');
