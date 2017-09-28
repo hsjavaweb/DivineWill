@@ -4,11 +4,18 @@
    * USE yideng;
 * 创建表格
    * CREATE TABLE Student(
-   * id INT PRIMARY KEY,
-   * NAME VARCHAR(20),
-   * age INT,
-   * sex VARCHAR(10)
+   * id INT PRIMARY KEY, -- 学号
+   * sname VARCHAR(20),	 -- 姓名
+   * age INT,		 -- 年龄
+   * sex VARCHAR(10)	 -- 性别
    * );
+* 在上面学生表的基本上增加一个class列
+   * ALTER TABLE Student ADD class VARCHAR(20);
+* 删除clss列,一次只能删一列。
+   * ALTER TABLE Student DROP class;
+* 列名sname修改为name
+   * ALTER TABLE Student CHANGE NAME sname varchar(20);
+
 # 增加数据
    * INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
    * INSERT INTO Student VALUES('2','rose','11','女');
@@ -27,10 +34,8 @@
    * UPDATE Student SET age='25' WHERE NAME='jerry';
 * 将年龄为22岁的性别为女的同学名字改为nice
    * UPDATE Student SET NAME='nice' WHERE age='22' AND sex='女';
-* 将学号为7的同学性别改为女
+* 将学号为7的同学性别改为'男'
    * UPDATE Student SET sex='男' WHERE id='7';
-* 在上面员工表的基本上增加一个class列
-   * ALTER TABLE Student ADD class VARCHAR(20);
 
 # 删除数据操作
 * 删除表中名为tom的记录
@@ -39,8 +44,6 @@
    * DELETE FROM Student;
 * 使用TRUNCATE删除表中记录
    * TRUNCATE TABLE Student;
-* 删除clss列,一次只能删一列。
-   * ALTER TABLE Student DROP class;
 
 * DELETE 删除表中的数据，表结构还在;删除后的数据可以找回
 TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
@@ -75,7 +78,7 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
 ### 3.模糊查询
 * 查询姓名由5个字母构成的学生记录
    * SELECT * FROM Student WHERE NAME LIKE '_____';
-* 查询姓名由4个字母构成，并且第5个字母为“e”的学生记录
+* 查询姓名由4个字母构成，并且第4个字母为“e”的学生记录
    * SELECT * FROM Student WHERE NAME LIKE '___e';
 * 查询姓名以“t”开头的学生记录
    * SELECT * FROM Student WHERE NAME LIKE 't%';
