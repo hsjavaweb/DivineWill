@@ -47,12 +47,12 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
 删除的数据不能找回。执行速度比DELETE快
 
 # 查询数据操作
-### 基础查询
+### 1.基础查询
 * 查询所有
    * SELECT * FROM Student;
 * 查询指定列
    * SELECT id,NAME,sex FROM Student;
-### 条件查询
+### 2.条件查询
 * 查询学号为3，或者姓名为rose的记录
    * SELECT * FROM Student WHERE id=3 OR NAME='rose';
 * 查询学号为1,2,3,4的记录
@@ -72,7 +72,7 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
 * 查询学号为1的同学的姓名 
    * SELECT NAME FROM Student WHERE id=1;
 
-### 模糊查询
+### 3.模糊查询
 * 查询姓名由5个字母构成的学生记录
    * SELECT * FROM Student WHERE NAME LIKE '_____';
 * 查询姓名由4个字母构成，并且第5个字母为“e”的学生记录
@@ -84,7 +84,7 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
 * 查询姓名中包含“a”字母的学生记录
    * SELECT * FROM Student WHERE NAME LIKE '%a%';
    
-### 字段控制查询
+### 4.字段控制查询
 * 去除重复记录
    * SELECT DISTINCT age FROM Student;
 * 给列表添加别名
@@ -95,7 +95,7 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
    * SELECT *,id+IFNULL(age,0) total FROM Student;
    * 因为任何东西与NULL相加结果还是NULL，使用IFNULL函数可以把NULL转换为数值0
    
-### 排序
+### 5.排序
 * 查询所有学生记录，按年龄升序排序
    * SELECT * FROM Student ORDER BY age ASC;
    * SELECT * FROM Student ORDER BY age; -- 默认升序
@@ -106,13 +106,23 @@ TRUNCATE 删除是把表直接DROP掉，然后再创建一个同样的新表。
 * 查询所有学生按年龄降序排序，如果年龄相同按学号升序排序
    * SELECT * FROM Student ORDER BY age DESC,id ASC;
    
-### 查询行数 
-* 查询有一共多少人：
+### 6.函数聚合 
+* 用来做纵向运算的函数
+* 查询有一共多少人，用COUNT()函数
    * SELECT COUNT(*) c FROM Student;
 * 查询表中有性别的人数
    * SELECT COUNT(sex) s FROM Student;
 * 查询表中年龄大于20的人数
    * SELECT COUNT(*) c FROM Student WHERE age > 20;
-* 查询有学号
-
-
+* 查询所有学生的年龄和，用SUM()函数
+   * SELECT SUM(age) FROM Student;
+* 查询所有学号+年龄和
+   * SELECT SUM(id+IFNULL(age,0)) total FROM Student;
+* 查询所有学生的平均年龄，用AVG()函数
+   * SELECT AVG(age) FROM Student;
+* 查询学生的最高年龄和最低年龄，用MAX(),MIN()函数
+   * SELECT MAX(age),MIN(age) FROM Student;
+### 7.LIMIT
+* LIMIT用来限定查询结果的起始行，以及总行数
+* 查询5行记录，起始行从0开始
+   * SELECT * FROM Student LIMIT 0,5;
