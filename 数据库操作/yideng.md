@@ -16,6 +16,7 @@
 * 列名sname修改为name
    * ALTER TABLE Student CHANGE NAME sname varchar(20);
 
+
 # 增加数据
    * INSERT INTO Student(id,NAME,age,sex) VALUES('1','jack','10','男');
    * INSERT INTO Student VALUES('2','rose','11','女');
