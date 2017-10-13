@@ -56,30 +56,30 @@
 
 * 创建员工表
    * CREATE TABLE emp(
-   *  empno INT,	  -- 员工编号
-   *  ename VARCHAR(50),-- 员工姓名
-   *  mgr INT,	  -- 领导编号
-   *  sal DECIMAL(7,2), -- 月薪
-   *  comm DECIMAL(7,2),-- 奖金
-   *  deptno INT  	  -- 部门编号
-   *);
+   * 　　empno INT,	  -- 员工编号
+   * 　　ename VARCHAR(50),-- 员工姓名
+   * 　　mgr INT,	  -- 领导编号
+   * 　　sal DECIMAL(7,2), -- 月薪
+   * 　　comm DECIMAL(7,2),-- 奖金
+   * 　　deptno INT  	  -- 部门编号
+   * );
    * INSERT INTO emp VALUES(111,'YD0',110,800,NULL,20),
-   * (222,'YD1',120,1600,300,40),
-   * (333,'YD2',222,1250,500,30),
-   * (444,'YD3',220,NULL,100,20),
-   * (555,'YD4',170,1400,200,40),
-   * (666,'YD5',222,NULL,300,30),
-   * (777,'YD6',170,NULL,400,10),
-   * (888,'YD7',333,1600,NULL,40),
-   * (999,'YD8',NULL,5000,NULL,10),
-   * (700,'YD9',190,1500,0,30);
+   * 　　(222,'YD1',120,1600,300,40),
+   * 　　(333,'YD2',222,1250,500,30),
+   * 　　(444,'YD3',220,NULL,100,20),
+   * 　　(555,'YD4',170,1400,200,40),
+   * 　　(666,'YD5',222,NULL,300,30),
+   * 　　(777,'YD6',170,NULL,400,10),
+   * 　　(888,'YD7',333,1600,NULL,40),
+   * 　　(999,'YD8',NULL,5000,NULL,10),
+   * 　　(700,'YD9',190,1500,0,30);
 
 * 创建部门表
    * CREATE TABLE dept(
-   * 	deptno		INT, 		-- 部分编码
-   * 	dname		VARCHAR(20),	-- 部分名称
-   * 	loc		VARCHAR(20)	-- 部分所在地点
-);
+   * 　　deptno		INT, 		-- 部分编码
+   * 　　dname		VARCHAR(20),	-- 部分名称
+   * 　　loc		VARCHAR(20)	-- 部分所在地点
+   * );
    * INSERT INTO dept VALUES(10, '学工部', '新疆');
    * INSERT INTO dept VALUES(20, '销售部', '黄石');
    * INSERT INTO dept VALUES(30, '财务部', '湖师大');
