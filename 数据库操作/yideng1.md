@@ -2,50 +2,50 @@
 
 ### 一对一(一个学生对应一个号码)
    * CREATE TABLE stu(
-   * 	sid INT PRIMARY KEY AUTO_INCREMENT,
-   * 	sname VARCHAR(20)
+   * 　　sid INT PRIMARY KEY AUTO_INCREMENT,
+   * 　　sname VARCHAR(20)
    * );
    * CREATE TABLE tel(
-   * 	sid INT PRIMARY KEY AUTO_INCREMENT,
-   * 	tel INT
+   * 　　sid INT PRIMARY KEY AUTO_INCREMENT,
+   * 　　tel INT
    * );
 ### 一对多(一个学生对应多个课程分数)
    * CREATE TABLE stu(
-   * 	sid INT PRIMARY KEY AUTO_INCREMENT,
-   *	sname VARCHAR(20)
+   * 　　sid INT PRIMARY KEY AUTO_INCREMENT,
+   * 　　sname VARCHAR(20)
    * );
    * CREATE TABLE score(
-   * 	id VARCHAR(20), -- 课程名称
-   * 	score INT,
-   * 	sid INT -- 外键列的数据类型一定要与主键的类型一致
-   * );
+   * 　　id VARCHAR(20), -- 课程名称
+   * 　　score INT,
+   * 　　sid INT -- 外键列的数据类型一定要与主键的类型一致
+   	);
    * ALTER TABLE score ADD CONSTRAINT kf_stu_score FOREIGN KEY(sid) REFERENCES stu(sid);
 
 ### 多对多(一个学生对应多个老师，一个老师对应多个学生)
    * CREATE TABLE stu(
-   * 	sid INT PRIMARY KEY AUTO_INCREMENT,
-   * 	sname VARCHAR(20)
+   * 　　sid INT PRIMARY KEY AUTO_INCREMENT,
+   * 　　sname VARCHAR(20)
    * );
    * CREATE TABLE teacher(
-   * 	tid INT PRIMARY KEY,
-   * 	tname VARCHAR(20)
+   * 　　tid INT PRIMARY KEY,
+   * 　　tname VARCHAR(20)
    * );
    * CREATE TABLE teacher_stu(
-   * 	sid INT,
-   * 	tid INT 
+   * 　　sid INT,
+   * 　　tid INT 
    * );
    * ALTER TABLE teacher_stu ADD CONSTRAINT fk_sid FOREIGN KEY(sid) REFERENCES stu(sid);
    * ALTER TABLE teacher_stu ADD CONSTRAINT fk_tid FOREIGN KEY(tid) REFERENCES teacher(tid);
 
 * 创建表A和表B
    * CREATE TABLE A(
-   * 	aid INT,
-   * 	aname VARCHAR(20)
+   * 　　aid INT,
+   * 　　aname VARCHAR(20)
    * );
    * INSERT INTO A VALUES(1,'a'),(2,'b'),(3,'c'),(4,'d');
    * CREATE TABLE B(
-   * 	vid INT,
-   * 	bNAME VARCHAR(20)
+   * 　　vid INT,
+   * 　　bNAME VARCHAR(20)
    * );
    * INSERT INTO B VALUES(4,'d'),(5,'e'),(6,'f');
 ### 合并结果集
