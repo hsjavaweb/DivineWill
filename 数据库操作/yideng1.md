@@ -1,6 +1,6 @@
 * CREATE DATABASE yideng;
 
-### 一对一(一个学习对应一个号码)
+### 一对一(一个学生对应一个号码)
    * CREATE TABLE stu(
    * 	sid INT PRIMARY KEY AUTO_INCREMENT,
    * 	sname VARCHAR(20)
@@ -12,7 +12,7 @@
 ### 一对多(一个学生对应多个课程分数)
    * CREATE TABLE stu(
    * 	sid INT PRIMARY KEY AUTO_INCREMENT,
-   *	 sname VARCHAR(20)
+   *	sname VARCHAR(20)
    * );
    * CREATE TABLE score(
    * 	id VARCHAR(20), -- 课程名称
@@ -54,15 +54,15 @@
 * UNION ALL:不去除重复记录
    * SELECT * FROM A UNION ALL SELECT * FROM B;
 
--- 创建员工表
+* 创建员工表
    * CREATE TABLE emp(
-   * 	empno INT,	  -- 员工编号
-   * 	ename VARCHAR(50),-- 员工姓名
-   * 	mgr INT,	  -- 领导编号
-   * 	sal DECIMAL(7,2), -- 月薪
-   * 	comm DECIMAL(7,2),-- 奖金
-   * 	deptno INT  	  -- 部门编号
-);
+   *  empno INT,	  -- 员工编号
+   *  ename VARCHAR(50),-- 员工姓名
+   *  mgr INT,	  -- 领导编号
+   *  sal DECIMAL(7,2), -- 月薪
+   *  comm DECIMAL(7,2),-- 奖金
+   *  deptno INT  	  -- 部门编号
+   *);
    * INSERT INTO emp VALUES(111,'YD0',110,800,NULL,20),
    * (222,'YD1',120,1600,300,40),
    * (333,'YD2',222,1250,500,30),
@@ -74,7 +74,7 @@
    * (999,'YD8',NULL,5000,NULL,10),
    * (700,'YD9',190,1500,0,30);
 
--- 创建部门表
+* 创建部门表
    * CREATE TABLE dept(
    * 	deptno		INT, 		-- 部分编码
    * 	dname		VARCHAR(20),	-- 部分名称
@@ -105,7 +105,7 @@
 * 右外连接: 右连接就是先把右表中所有记录都查询出来，然后左表满足条件的显示，不满足显示NULL
    * SELECT * FROM emp e RIGHT OUTER JOIN dept d ON e.deptno=d.deptno;
 
--- 自然连接:两张连接的表中名称和类型完全一致的列作为条件，及以e.deptno=d.deptno作为条件
+### 自然连接:两张连接的表中名称和类型完全一致的列作为条件，及以e.deptno=d.deptno作为条件
    * SELECT * FROM emp NATURAL JOIN dept;
    * SELECT * FROM emp NATURAL LEFT JOIN dept;
    * SELECT * FROM emp NATURAL RIGHT JOIN dept;
