@@ -41,3 +41,17 @@ _斜体_
 
 [无链接的链接][null-link]
 [null-link]:https://github.com/XCgratitude
+
+
+| ABCD | EFGH | IJKL |
+| -----|:----:| ----:|
+| a    | b    | c    |
+| d    | e    |  f   |
+| g    | h    |   i  |
+
+ABCD | EFGH | IGKL
+-----|------|----
+a    | b    | c
+d    | e    | f
+g    | h    | i
+
