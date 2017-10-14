@@ -37,7 +37,7 @@ _斜体_
 ![learing][2]
 
 [1]:https://github.com/XCgratitude
-[2]:(http://11.jps)
+[2]:[http://11.jps]
 
 [无链接的链接][null-link]
 [null-link]:https://github.com/XCgratitude
