@@ -34,10 +34,10 @@ _斜体_
 - 外层列表项目
 
 [github][1]
-![图片][2]
+![learing](http://11.jps)
 
 [1]:https://github.com/XCgratitude
-[2]:http://11.jpg
+
 
 [无链接的链接][null-link]
 [null-link]: chrome://not-a-link
