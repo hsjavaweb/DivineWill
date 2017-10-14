@@ -19,6 +19,7 @@ public class Test1 {
 	 * @param args
 	 * @throws SQLException 
 	 */
+	//JDBC³õÌåÑé
 	public static void main(String[] args) throws SQLException {
 
 		//1.×¢²áÇı¶¯

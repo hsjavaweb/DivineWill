@@ -34,6 +34,7 @@ public class Test2 {
 	 * @param args
 	 * @throws SQLException 
 	 */
+	//·â×°
 	public static void main(String[] args) throws SQLException {
 		//1.×¢²áÇý¶¯
 		DriverManager.registerDriver(new com.mysql.jdbc.Driver());

@@ -11,6 +11,7 @@ import com.alibaba.util.DBUtils;
 
 public class Test5 {
 
+	//解决问题 :用preparedStatement:预编译对象, 是Statement对象的子类
 	@Test
 	public void login(){
 		Scanner sc = new Scanner(System.in);
@@ -18,7 +19,6 @@ public class Test5 {
 		String username = sc.nextLine();
 		System.out.println("请输入密码！");
 		String password = sc.nextLine();
-		//preparedStatement:预编译对象, 是Statement对象的子类
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

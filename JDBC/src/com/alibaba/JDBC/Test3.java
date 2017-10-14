@@ -12,6 +12,7 @@ import com.alibaba.Bean.User;
 
 public class Test3 {
 	
+	//正确关闭资源
 	@Test
 	public void test1(){
 		Connection conn = null;
