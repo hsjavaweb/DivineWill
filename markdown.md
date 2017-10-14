@@ -20,7 +20,7 @@ int main (void)
 ！[图片]https://github.com/XCgratitude/test.git
 点我搜索[百度](https://www.baidu.com)
 
-[图片](https://github.com/XCgratitude/origin/raw/11.jpg)
+[图片](https://github.com/XCgratitude/origin/raw/master/11.jpg)
 
 
 
