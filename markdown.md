@@ -35,6 +35,7 @@ _斜体_
 
 [github][1]
 ![learing][2]
+![图片](http://11.jpg)
 
 [1]:https://github.com/XCgratitude
 [2]:[http://11.jps]
