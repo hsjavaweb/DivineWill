@@ -1,44 +1,25 @@
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
-大标题
-=
-小标题
--
+>这是用法
+>>这是嵌套
 
+	#include  <stdio.h>
+	int  main (void)
+	{
+	  	printf ("我是代码.\n");
+	    return 0;
+	}
 
-**粗体**
-__粗体__
-*斜体*
-_斜体_
+```C
+#include<stdio.h>
+int main (void)
+{
+printf ("我是代码.\n");
+return 0;
+}
+```
+点我搜索[百度](https://www.baidu.com)
 
-- 无序列表项目
-- 无序列表项目
-- 无序列表项目
+[图片](http://11.jpg)
 
-* 无序列表项目
-* 无序列表项目
-* 无序列表项目
-
-1. 有序列表项目
-2. 有序列表项目
-3. 有序列表项目
-
-- 外层列表项目
- + 内层列表项目
- + 内层列表项目
- + 内层列表项目
-- 外层列表项目
-
-[github][1]
-![learing][2]
-![图片](http://11.jpg)
-
-[1]:https://github.com/XCgratitude
-[2]:[http://11.jps]
 
 [无链接的链接][null-link]
 [null-link]:https://github.com/XCgratitude
