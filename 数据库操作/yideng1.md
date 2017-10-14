@@ -64,15 +64,15 @@
    * 　　deptno INT  	  -- 部门编号
    * );
    * INSERT INTO emp VALUES(111,'YD0',110,800,NULL,20),
-   * 　　(222,'YD1',120,1600,300,40),
-   * 　　(333,'YD2',222,1250,500,30),
-   * 　　(444,'YD3',220,NULL,100,20),
-   * 　　(555,'YD4',170,1400,200,40),
-   * 　　(666,'YD5',222,NULL,300,30),
-   * 　　(777,'YD6',170,NULL,400,10),
-   * 　　(888,'YD7',333,1600,NULL,40),
-   * 　　(999,'YD8',NULL,5000,NULL,10),
-   * 　　(700,'YD9',190,1500,0,30);
+   * (222,'YD1',120,1600,300,40),
+   * (333,'YD2',222,1250,500,30),
+   * (444,'YD3',220,NULL,100,20),
+   * (555,'YD4',170,1400,200,40),
+   * (666,'YD5',222,NULL,300,30),
+   * (777,'YD6',170,NULL,400,10),
+   * (888,'YD7',333,1600,NULL,40),
+   * (999,'YD8',NULL,5000,NULL,10),
+   * (700,'YD9',190,1500,0,30);
 
 * 创建部门表
    * CREATE TABLE dept(
@@ -105,7 +105,7 @@
 * 右外连接: 右连接就是先把右表中所有记录都查询出来，然后左表满足条件的显示，不满足显示NULL
    * SELECT * FROM emp e RIGHT OUTER JOIN dept d ON e.deptno=d.deptno;
 
-### 自然连接:两张连接的表中名称和类型完全一致的列作为条件，及以e.deptno=d.deptno作为条件
+### 自然连接:两张连接的表中名称和类型完全一致的列作为条件，则以e.deptno=d.deptno作为条件
    * SELECT * FROM emp NATURAL JOIN dept;
    * SELECT * FROM emp NATURAL LEFT JOIN dept;
    * SELECT * FROM emp NATURAL RIGHT JOIN dept;
