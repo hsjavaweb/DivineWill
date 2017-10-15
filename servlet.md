@@ -243,14 +243,14 @@ public class ServletDemo7 extends HttpServlet {
 ![图片](https://github.com/XCgratitude/test/raw/master/imge/4.jpg)
 ```
 public class ServletDemo8 extends HttpServlet {
-			public void doGet(HttpServletRequest request, HttpServletResponse response)
-					throws ServletException, IOException {
-				System.out.println("他在家吗？");
-				System.out.println("我帮你问问！");
-				ServletContext application = this.getServletContext();
-				//将请求向下传递
-				application.getRequestDispatcher("/servletDemo9").forward(request, response);
-				System.out.println("好的！");
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("他在家吗？");
+		System.out.println("我帮你问问！");
+		ServletContext application = this.getServletContext();
+		//将请求向下传递
+		application.getRequestDispatcher("/servletDemo9").forward(request, response);
+		System.out.println("好的！");
 			}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
