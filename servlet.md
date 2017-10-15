@@ -110,15 +110,15 @@ public class ServletDemo3 extends HttpServlet {
 # 5.Servlet获取配置信息
 * ServletConfig的使用(可以获取servlet的配置信息)
 ```
-	//web.xml的配置
-	<servlet>
-		<servlet-name>ServletDemo4</servlet-name>
-	    <servlet-class>com.alibaba.servlet.ServletDemo4</servlet-class>
-	    <init-param>
-	  		<param-name>encoding</param-name>
-	  		<param-value>UTF-8</param-value>
-	  	 </init-param>
-		</servlet>
+//web.xml的配置
+<servlet>
+	<servlet-name>ServletDemo4</servlet-name>
+	<servlet-class>com.alibaba.servlet.ServletDemo4</servlet-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+</servlet>
 ```
  * 方式一
 ```
@@ -223,13 +223,12 @@ public class ServletDemo7 extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	//获取/WEB-INF/classes/a.properties文件
-	private void test3() throws IOException, FileNotFoundException {
-			String path = this.getServletContext().getRealPath("/WEB-INF/classes/a.properties");//参数一定要以/开头
-			//创建Properties对象
-			Properties pro = new Properties();
-			pro.load(new FileInputStream(path));
-			System.out.println(pro.get("key"));
+		//获取/WEB-INF/classes/a.properties文件
+		String path = this.getServletContext().getRealPath("/WEB-INF/classes/a.properties");//要以/开头
+		//创建一个Properties
+		Properties pro = new Properties();
+		pro.load(new FileInputStream(path));
+		System.out.println(pro.get("name"));
 		}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
