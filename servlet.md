@@ -220,7 +220,6 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 ```
 //String  getRealPath(String path);//根据资源名称得到资源的绝对路径.
 public class ServletDemo7 extends HttpServlet {
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//获取/WEB-INF/classes/a.properties文件
