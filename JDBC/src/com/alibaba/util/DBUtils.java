@@ -13,7 +13,6 @@ import java.util.ResourceBundle;
 		private static String url;
 		private static String username;
 		private static String password;
-
 		static{
 			//用于加载配置文件
 			ResourceBundle rb = ResourceBundle.getBundle("database");
