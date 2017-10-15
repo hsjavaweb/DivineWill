@@ -20,7 +20,7 @@ public void service(ServletRequest arg0, ServletResponse arg1)
   </servlet-mapping>
 ```
 
-* c.将web项目部署到服务器上，开启服务器，在浏览器上输入http://localhost:8080/Servlet/servletDemo1，访问服务器，控制台输出：service
+* c.将web项目部署到服务器上，开启服务器，在浏览器上输入[http://localhost:8080/Servlet/servletDemo1]，访问服务器，控制台输出：service
 
 # 2.Servlet生命周期
 * 实例化-->初始化-->服务->销毁
@@ -130,6 +130,7 @@ public class ServletDemo4 extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//获得配置文件中的信息的	
 		String encoding = config.getInitParameter("enconding");
 		System.out.println(encoding);
 
@@ -173,7 +174,9 @@ void rmoveAttribute(String name);//根据name去移除数据
 public class ServletDemo5 extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//通过调用GenericServlet的getServletContext方法得到ServletContext对象
 		ServletContext context =  this.getServletContext();
+		//向ServletContext添加一个键值对
 		context.setAttribute("name", "tom");
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -222,7 +225,7 @@ public class ServletDemo7 extends HttpServlet {
 			throws ServletException, IOException {
 	//获取/WEB-INF/classes/a.properties文件
 	private void test3() throws IOException, FileNotFoundException {
-			String path = this.getServletContext().getRealPath("/WEB-INF/classes/a.properties");
+			String path = this.getServletContext().getRealPath("/WEB-INF/classes/a.properties");//参数一定要以/开头
 			//创建Properties对象
 			Properties pro = new Properties();
 			pro.load(new FileInputStream(path));
@@ -240,7 +243,6 @@ public class ServletDemo7 extends HttpServlet {
 ![图片](https://github.com/XCgratitude/test/raw/master/imge/4.jpg)
 ```
 public class ServletDemo8 extends HttpServlet {
-
 			public void doGet(HttpServletRequest request, HttpServletResponse response)
 					throws ServletException, IOException {
 				System.out.println("他在家吗？");
@@ -248,10 +250,8 @@ public class ServletDemo8 extends HttpServlet {
 				ServletContext application = this.getServletContext();
 				//将请求向下传递
 				application.getRequestDispatcher("/servletDemo9").forward(request, response);
-				
 				System.out.println("好的！");
 			}
-
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
@@ -259,17 +259,14 @@ public class ServletDemo8 extends HttpServlet {
 }
 
 public class ServletDemo9 extends HttpServlet {
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("我在家!");
 	}
-
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
 }
-
 ```
 ![图片](https://github.com/XCgratitude/test/raw/master/imge/3.jpg)
