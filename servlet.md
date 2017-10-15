@@ -119,9 +119,8 @@ public class ServletDemo3 extends HttpServlet {
 	  		<param-value>UTF-8</param-value>
 	  	 </init-param>
 		</servlet>
-
-   * 方式一
 ```
+ * 方式一
 ```
 public class ServletDemo4 extends HttpServlet {
 
@@ -139,7 +138,6 @@ public class ServletDemo4 extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
 ```
    * 方式二
@@ -167,5 +165,111 @@ ServletContext: 代表的是整个应用。一个应用只有一个ServletContex
 void setAttribute(String name,object value);//向ServletContext对象的map中添加数据
 Object getAttribute(String name);//从ServletContext对象的map中取数据
 void rmoveAttribute(String name);//根据name去移除数据
+```
+![图片](https://github.com/XCgratitude/test/raw/master/imge/2.jpg)
 
 ```
+//servlet1
+public class ServletDemo5 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ServletContext context =  this.getServletContext();
+		context.setAttribute("name", "tom");
+	}
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+}
+
+//servlet2
+public class ServletDemo6 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ServletContext context =  this.getServletContext();
+		String name = (String) context.getAttribute("name");
+		if(name==null){
+			System.out.println("你不能直接访问这个类");
+		}
+		System.out.println(name);
+	}
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+}
+```
+* 获取全局配置信息
+```
+//配置全局信息
+<context-param>
+	<param-name>name</param-name>
+	<param-value>tom1</param-value>
+</context-param>
+
+public void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+	ServletContext context =  this.getServletContext().getInitParameter("name");
+	System.out.println(name1);
+}
+```
+* 获取资源路径
+```
+//String  getRealPath(String path);//根据资源名称得到资源的绝对路径.
+public class ServletDemo7 extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	//获取/WEB-INF/classes/a.properties文件
+	private void test3() throws IOException, FileNotFoundException {
+			String path = this.getServletContext().getRealPath("/WEB-INF/classes/a.properties");
+			//创建Properties对象
+			Properties pro = new Properties();
+			pro.load(new FileInputStream(path));
+			System.out.println(pro.get("key"));
+		}
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
+```
+
+# 7.实现Servlet的转发
+![图片](https://github.com/XCgratitude/test/raw/master/imge/4.jpg)
+```
+public class ServletDemo8 extends HttpServlet {
+
+			public void doGet(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				System.out.println("他在家吗？");
+				System.out.println("我帮你问问！");
+				ServletContext application = this.getServletContext();
+				//将请求向下传递
+				application.getRequestDispatcher("/servletDemo9").forward(request, response);
+				
+				System.out.println("好的！");
+			}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+}
+
+public class ServletDemo9 extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("我在家!");
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+}
+
+```
+![图片](https://github.com/XCgratitude/test/raw/master/imge/3.jpg)
